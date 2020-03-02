@@ -1,20 +1,13 @@
-// function toonWinnaars(input) {
-//     var landen = new Array("Frankrijk", "Kroatië", "Beglië");
-//     document.write("Op plaats 1 staat : " + input);
-//     document.write("Op plaats 1 staat : " + input);
-//     document.write("Op plaats 1 staat : " + input);
-// }
+var landen = new Array("Frankrijk", "Kroatië", "Beglië");
 
-
-
-
-
-function groet(input) {
-    namen = new Array("An", "Fred", "Anne", "Alfred");
-    document.write("<br>" + "Goedendag, " + input);
-    document.write("<br>" + "Alles goed met de kinderen " + input + "?" + "<br>");
+function toonWinnaars1(input) {
+    document.write("<br>Op plaats 1 staat : " + input + "." + "<br>");
 }
-groet(namen[0]);
-groet(namen[1]);
-groet(namen[2]);
-groet(namen[3]);
+
+function toonWinnaars2(input) {
+    document.write("<br>Op plaats 2 staat : " + input + "." + "<br>");
+}
+
+function toonWinnaars3(input) {
+    document.write("<br>Op plaats 3 staat : " + input + ".");
+}
