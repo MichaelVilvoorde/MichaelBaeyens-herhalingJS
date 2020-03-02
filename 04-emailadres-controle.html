@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var email = prompt("Geef je email in.");
+        if (email == null) {
+            document.write("U heeft geanuleerd.");
+        } else if (email.length == 0) {
+            document.write("U heeft geen gegevens ingevuld");
+        } else if (email.includes("@") == false) {
+            document.write("Dit lijkt geen correct emailadres te zijn!" + "<br>U heeft geen @ ingegeven.")
+        } else if (email.includes(" ") == true) {
+            document.write("Dit lijkt geen correct emailadres te zijn!" + "<br>U heeft ergens in het email adress een spatie ingegeven.")
+        } else if (email.includes(".") == false) {
+            document.write("Dit lijkt geen correct emailadres te zijn!" + "<br>U heeft geen . ingegeven.")
+        } else if (email.substring(0, email.indexOf("@")).length < 3) {
+            document.write("Er moeten minstens 2 tekens voor de @staan.");
+        } else {
+            document.write("Ziet er goed uit!")
+        }
+    </script>
+</body>
+
+</html>
