@@ -10,6 +10,19 @@
 <body>
     <script>
         var weekdag = prompt("Geef een dag van de week in aub.")
+        var weekdagen = new Array("maandag", "dinsdag", "woensdag", "donderdag", "vrijdag");
+        var weekend = new Array("zaterdag", "zondag");
+        if (weekdag == null) {
+            document.write("U heeft geanuleerd.");
+        } else if (weekdag.length == 0) {
+            document.write("U heeft geen gegevens ingevuld");
+        } else if (weekdag == weekdagen[0] || weekdag == weekdagen[1] || weekdag == weekdagen[2] || weekdag == weekdagen[3] || weekdag == weekdagen[4]) {
+            document.write("Helaas, het is een werkdag");
+        } else if (weekdag >= weekend[0] || weekdag == weekend[1]) {
+            document.write("Hoera, het is weekend!");
+        } else {
+            document.write("U heeft geen weekdag ingegeven met de juist schrijfwijze!")
+        }
     </script>
 </body>
 
