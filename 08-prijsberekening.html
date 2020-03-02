@@ -12,18 +12,18 @@
         kostprijs = prompt("Wat is de kostprijs?", 10);
         btw = prompt("Wat is het btwpercentage?", 21);
         aantal = prompt("Wat is het aanstal stuks?", 2);
-        // getal1 = kostprijs;
-        // getal2 = btw;
-        // getal3 = aantal;
-        // if (getal1 == null || getal2 = null || getal3 == null) {
-        //     document.write("Je hebt geannuleerd.");
-        // } else if (getal1.length == 0 || getal2.length == 0 || getal3.length) {
-        //     document.write("Je hebt niets ingevuld.");
-        // }
-        prijsInclBtw = (kostprijs * btw) / 100 + parseInt(kostprijs);
-        console.log(prijsInclBtw)
-        totaal = prijsInclBtw * aantal;
-        document.write("Voor een prijs van " + kostprijs + ", btw van " + btw + " en " + aantal + " stuks is de totale prijs " + totaal)
+        if (kostprijs == null || btw == null || aantal == null) {
+            document.write("<p>U heeft geannuleerd!");
+        } else if (kostprijs.length == 0 || btw.length == 0 || aantal.length == 0) {
+            document.write("<p>U heeft niet alles ingegeven!");
+        } else if (isNaN(kostprijs) || isNaN(aantal) || isNaN(btw)) {
+            document.write('<p>Het zijn niet allemaal nummers!</p>');
+        } else {
+            prijsInclBtw = (kostprijs * btw) / 100 + parseInt(kostprijs);
+            console.log(prijsInclBtw)
+            totaal = prijsInclBtw * aantal;
+            document.write("Voor een prijs van " + kostprijs + ", btw van " + btw + " en " + aantal + " stuks is de totale prijs " + totaal)
+        }
     </script>
 </body>
 

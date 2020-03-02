@@ -1,35 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Controle email</title>
+    <script type="text/javascript">
+        var cursisten = new Array();
+
+        function ingeven() {
+            var cursist = prompt("Geef de naam van de cursist in. (0 om te stoppen)");
+            if (cursist == null) {
+                document.write("<p>U heeft geanulleerd!</p>");
+            } else if (cursist.length == 0) {
+                document.write("<p>U heeft niets ingevuld!</p>");
+            } else if (cursist == "0") {
+                document.write('<p>U bent gestopt met cursisten ingeven.</p>')
+                tonen()
+            } else {
+                cursisten.push(cursist);
+                ingeven();
+            }
+        }
+
+        function tonen() {
+            if (cursisten.length > 0) {
+                document.write("<p>Dit zijn de cursisten:");
+                var lengte = cursisten.length;
+                for (i = 0; i < lengte; i++) {
+                    document.write("<p>" + cursisten[i] + "</p>");
+                }
+            } else {
+                document.write("<p>Er zijn geen cursisten ingegeven.");
+            }
+        }
+
+        ingeven();
+    </script>
 </head>
 
 <body>
-    <script>
-        var namen = [];
-
-        for (i = 0; i < namen.length; i++) {
-            var namen = prompt("Geef de namen van cursist in.");
-        }
-
-        // function ingeven() {
-
-
-
-        //     if (vraag == null) {
-        //         document.write("U heeft geanuleerd.");
-        //     } else if (vraag.length == 0) {
-        //         document.write("U heeft geen gegevens ingevuld");
-        //     } else if (true) {
-
-        //         document.write("U bent gestopt met cursisten ingeven.")
-        //     }
-        // }
-        // ingeven();
-    </script>
 </body>
 
 </html>

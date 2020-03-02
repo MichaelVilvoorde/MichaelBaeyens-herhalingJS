@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title></title>
+    <script language="JavaScript" type="text/javascript">
+        function machtverheffing(factor, exponent) {
+            var resultaat = 1;
+            for (var i = 0; i < exponent; i++)
+                resultaat *= factor;
+            return resultaat;
+        };
+
+
+        function bereken() {
+            var g1 = document.formulier.g1.value;
+            var g2 = document.formulier.g2.value;
+            if (g1 == "" || g2 == "" || isNaN(g1) || isNaN(g2)) {
+                schrijf("Gelieve je invoer na te kijken.")
+            } else {
+                var berekening = machtverheffing(g1, g2);
+                schrijf(berekening);
+            }
+        }
+
+        function schrijf(tekst) {
+            document.formulier.resultaat.value = tekst;
+        }
+
+        //http://www.w3schools.com/js/js_htmldom_nodes.asp
+    </script>
 </head>
 
 <body>
-    <p>Dit document is een lang document maar ook een simpel document</p>
-    <form name="form">
-        <input type="text" name="zoek" />
-        <input type="text" name="vervang" />
-        <input type="button" name="button" value="vervang" onclick="bereken(doc,document.form.zoek.value, document.form.vervang.value);" /> input
+    <form name="formulier">
+        <input type="text" name="g1">
+        <input type="text" name="g2">
+        <input type="button" value="Machtsverheffing" onclick="bereken()">
+        <input name="resultaat" size=50></input>
     </form>
-    <script type="text/javascript">
-        var doc = "Dit document is een lang document maar ook een simpel document";
-
-        function bereken(doc, woord, nieuwewoord) {
-            if (doc.indexOf(woord) != -1) {
-                deel1 = doc.substr(0, doc.indexOf(woord)) + nieuwewoord;
-                deel2 = doc.substring(doc.indexOf(woord) + woord.length, doc.length);
-                doc = deel1 + deel2;
-            }
-            document.write(doc);
-        }
-    </script>
 </body>
 
 </html>
